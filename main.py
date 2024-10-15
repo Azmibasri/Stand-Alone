@@ -12,7 +12,7 @@ awal_y = 10
 awal_x2 = 490
 awal_y2 = 490
 
-ball_pos = pygame.Vector2(250, 250)
+ball_pos = pygame.Vector2(400,400)
 speed = pygame.Vector2(5, 5)
 black = 0, 0, 0
 
