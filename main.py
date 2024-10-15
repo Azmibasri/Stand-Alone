@@ -1,34 +1,17 @@
-import pygame 
+import pygame
 
 pygame.init()
-screen = pygame.display.set_mode((1280,720))
-clock = pygame.time.Clock()
-running = True
-dt = 0
 
-player_pos = pygame.Vector2(screen.get_width() / 2,screen.get_height() / 2)
+screen = pygame.display.set_mode((500, 500))
+running = True
 
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-    
-    screen.fill("Purple")
 
-    pygame.draw.circle(screen,"red",player_pos,40)
-
-    keys = pygame.key.get_pressed()
-    if keys[pygame.K_w]:
-        player_pos.y -= 300 *dt
-    if keys[pygame.K_s]:
-        player_pos.y += 300 * dt
-    if keys[pygame.K_a]:
-        player_pos.x -= 300 * dt
-    if keys[pygame.K_d]:
-        player_pos.x += 300 * dt
-    if keys[pygame.K_SPACE]:
-        player_pos.y -= 1000*dt
-    pygame.display.flip()
-    dt = clock.tick(60) / 1000
+    screen.fill((0, 0, 0))  # Clear the screen with black
+    pygame.draw.line(screen, (255, 0, 0), (10, 10), (10, 300), 15)  # Draw the line
+    pygame.display.flip()  # Update the display
 
 pygame.quit()
