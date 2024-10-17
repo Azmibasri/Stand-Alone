@@ -23,6 +23,7 @@ position = [0, 300]
 # Pengaturan karakter
 speed = 2
 is_jumping = False
+is_sneak = False
 jump_height = 10
 jump_count = jump_height
 
@@ -58,6 +59,12 @@ while running:
         else:
             is_jumping = False
             jump_count = jump_height
+
+    #Logika Menyelinap
+    if not is_sneak:
+        if keys[pygame.K_LSHIFT]:
+            is_sneak = True
+
 
     # Mengisi layar dengan warna putih
     screen.fill(Black)
